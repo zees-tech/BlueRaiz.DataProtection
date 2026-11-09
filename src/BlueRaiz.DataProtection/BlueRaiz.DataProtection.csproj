@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <PackageId>BlueRaiz.DataProtection</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>BlueRaiz</Authors>
+    <Description>Keeps ASP.NET Core Data Protection keys in the app's own PostgreSQL database, encrypted with a master key, so they are backed up and restored with the data they protect.</Description>
+    <PackageTags>aspnetcore;dataprotection;postgresql;npgsql;encryption</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/zees-tech/BlueRaiz.DataProtection</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/zees-tech/BlueRaiz.DataProtection</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <!-- The lowest supported version: an app's own, newer Npgsql wins. -->
+    <PackageReference Include="Npgsql" Version="8.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <InternalsVisibleTo Include="BlueRaiz.DataProtection.Tests" />
+  </ItemGroup>
+
+</Project>
