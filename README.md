@@ -66,4 +66,4 @@ TEST_DATABASE="Host=localhost;Username=postgres;Password=postgres" dotnet test
 ```
 
 Releases: push a tag `vX.Y.Z` matching `<Version>` in the project file. The workflow tests, packs and publishes it to
-nuget.org (repository secret `NUGET_API_KEY`).
+nuget.org through Trusted Publishing (a policy on nuget.org for this repository and `ci.yml`; no API key is stored).
